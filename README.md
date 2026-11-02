@@ -1,14 +1,9 @@
-Here is a professional, comprehensive `README.md` for your GitHub repository. It includes an overview, tech stack, features, architecture, and setup instructions based on the code and design we've built together.
-
-You can copy and paste this directly into your `README.md` file.
-
-```markdown
 <div align="center">
   <img src="https://img.shields.io/badge/Next.js-16-black?style=for-the-badge&logo=next.js" alt="Next.js" />
   <img src="https://img.shields.io/badge/Spring_Boot-3.4-6DB33F?style=for-the-badge&logo=spring-boot" alt="Spring Boot" />
   <img src="https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql" alt="PostgreSQL" />
   <img src="https://img.shields.io/badge/Google_Gemini-4285F4?style=for-the-badge&logo=google" alt="Google Gemini" />
-  
+
   <h1>🚀 DevPilot</h1>
   <p><strong>Chat with your codebase using AI, RAG, and citations.</strong></p>
 </div>
@@ -17,7 +12,7 @@ You can copy and paste this directly into your `README.md` file.
 
 ## 📖 Overview
 
-**DevPilot** is an AI-powered developer tool that allows you to connect your GitHub repositories, index your code using Retrieval-Augmented Generation (RAG), and have natural language conversations with your codebase. 
+**DevPilot** is an AI-powered developer tool that allows you to connect your GitHub repositories, index your code using Retrieval-Augmented Generation (RAG), and have natural language conversations with your codebase.
 
 Whether you are onboarding to a new project, looking for specific logic, or debugging a complex issue, DevPilot gives you grounded answers with exact file and line citations.
 
@@ -185,16 +180,5 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 <div align="center">
-  <p>Built with ❤️ by <a href="https://github.com/your-username">Your Name</a></p>
+  <p>Built with ❤️ by <a href="https://github.com/madhurja6">Madhurja Adak</a></p>
 </div>
-```
-
-### Tips for this README:
-1. **Replace Placeholders**: Don't forget to replace `your-username`, `YOUR_GITHUB_CLIENT_ID`, `YOUR_GOOGLE_AI_API_KEY`, and `Your Name` with your actual details.
-2. **Screenshots**: GitHub READMEs look **10x better** with images. Take a screenshot of your beautiful dark-mode Dashboard and Chat interface, save them in a `/public` or `/docs` folder, and add them to the README like this:
-   ```markdown
-   ## 📸 Screenshots
-   ![Dashboard](docs/dashboard-screenshot.png)
-   ![Chat Interface](docs/chat-screenshot.png)
-   ```
-3. **Live Demo**: If you deploy this (e.g., Vercel for frontend, Render for backend), add a live demo link at the top!
