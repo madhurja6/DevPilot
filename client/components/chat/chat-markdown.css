@@ -1,0 +1,138 @@
+.chat-markdown {
+    color: var(--color-foreground);
+    font-size: 0.875rem;
+    line-height: 1.625;
+}
+
+.chat-markdown h1,
+.chat-markdown h2,
+.chat-markdown h3,
+.chat-markdown h4 {
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+    letter-spacing: -0.025em;
+    color: var(--color-foreground);
+}
+
+.chat-markdown h1 {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid var(--color-border);
+    padding-bottom: 0.5rem;
+    font-size: 1.25rem;
+}
+
+.chat-markdown h2 {
+    font-size: 1.125rem;
+}
+
+.chat-markdown h3 {
+    margin-top: 1rem;
+    font-size: 1rem;
+}
+
+.chat-markdown p {
+    margin-bottom: 1rem;
+}
+
+.chat-markdown p:last-child {
+    margin-bottom: 0;
+}
+
+.chat-markdown ul,
+.chat-markdown ol {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    margin-bottom: 1rem;
+    padding-left: 1.25rem;
+}
+
+.chat-markdown ul {
+    list-style: disc;
+}
+
+.chat-markdown ol {
+    list-style: decimal;
+}
+
+.chat-markdown li > p {
+    margin-bottom: 0;
+}
+
+.chat-markdown a {
+    color: var(--color-primary);
+    font-weight: 500;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    transition: opacity 150ms;
+}
+
+.chat-markdown a:hover {
+    opacity: 0.8;
+}
+
+.chat-markdown code:not(pre code) {
+    border-radius: 0.25rem;
+    background: var(--color-muted);
+    padding: 0.2rem 0.4rem;
+    color: var(--color-primary);
+    font-family: var(--font-mono);
+    font-size: 0.85em;
+}
+
+.chat-markdown pre {
+    overflow-x: auto;
+    margin-bottom: 1rem;
+    border: 1px solid var(--color-border);
+    border-radius: 0.5rem;
+    background: var(--color-zinc-950);
+    padding: 1rem;
+    color: var(--color-zinc-50);
+}
+
+.dark .chat-markdown pre {
+    background: var(--color-zinc-900);
+}
+
+.chat-markdown pre code {
+    border: 0;
+    background: transparent;
+    padding: 0;
+    font-family: var(--font-mono);
+    font-size: 0.875rem;
+}
+
+.chat-markdown blockquote {
+    margin-bottom: 1rem;
+    border-left: 4px solid color-mix(in oklab, var(--color-primary) 20%, transparent);
+    padding-left: 1rem;
+    color: var(--color-muted-foreground);
+    font-style: italic;
+}
+
+.chat-markdown table {
+    width: 100%;
+    margin-bottom: 1rem;
+    border-collapse: collapse;
+    font-size: 0.875rem;
+}
+
+.chat-markdown th {
+    border-bottom: 2px solid var(--color-border);
+    padding: 0.5rem;
+    text-align: left;
+    font-weight: 600;
+}
+
+.chat-markdown td {
+    border-bottom: 1px solid var(--color-border);
+    padding: 0.5rem;
+}
+
+.chat-markdown hr {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-color: var(--color-border);
+}

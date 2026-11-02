@@ -1,0 +1,22 @@
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: devpilot-mysql
+    environment:
+      MYSQL_DATABASE: devpilot
+      MYSQL_USER: mysql
+      MYSQL_PASSWORD: mysqlpassword
+      MYSQL_ROOT_PASSWORD: rootpassword
+    ports:
+      - "3308:3306"
+    volumes:
+      - devpilot_mysql_data:/var/lib/mysql
+      - ./docker/mysql/init-extensions.sql:/docker-entrypoint-initdb.d/01-extensions.sql:ro
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-prootpassword"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  devpilot_mysql_data:
