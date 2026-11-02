@@ -9,6 +9,12 @@ import { toast } from "@/components/ui/toast";
 
 const INDEXING_POLL_MS = 2000;
 
+function uniqueRepos(repos: Repository[]): Repository[] {
+    return Array.from(
+        new Map(repos.map((repo) => [repo.githubRepoId, repo])).values()
+    );
+}
+
 function hasIndexingRepos(repos: Repository[] | undefined): boolean {
     return repos?.some((repo) => repo.indexStatus === "INDEXING") ?? false;
 }
@@ -36,10 +42,10 @@ export function useRepos() {
             const repos = await api.listRepos(false);
 
             if (repos.length === 0) {
-                return api.listRepos(true);
+                return uniqueRepos(await api.listRepos(true));
             }
 
-            return repos;
+            return uniqueRepos(repos);
         },
         staleTime: 30_000,
         refetchInterval: (query) =>
@@ -113,7 +119,7 @@ export function useRefreshRepos() {
 
     return useMutation({
         mutationFn: () =>
-            toast.promise(api.listRepos(true), {
+            toast.promise(api.listRepos(true).then(uniqueRepos), {
                 loading: {
                     title: "Syncing repositories",
                     description: "Fetching the latest repos from GitHub...",

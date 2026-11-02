@@ -1,7 +1,7 @@
 package devPilot.backend.services;
 
 import java.time.Instant;
-import java.util.ArrayList;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;
@@ -60,7 +60,7 @@ public class RepoService {
         String token = userService.decryptAccessToken(user);
         List<Map<String, Object>> remoteRepos = gitHubApiClient.listUserRepos(token);
 
-        List<Repository> saved = new ArrayList<>();
+        Map<Long, Repository> savedByGithubRepoId = new LinkedHashMap<>();
 
         for (Map<String, Object> remote : remoteRepos) {
 
@@ -118,10 +118,12 @@ public class RepoService {
                 }
             }
 
-            saved.add(repositoryRepository.save(repo));
+            savedByGithubRepoId.put(
+                    githubRepoId,
+                    repositoryRepository.save(repo));
         }
 
-        return saved.stream()
+        return savedByGithubRepoId.values().stream()
                 .sorted((a, b) -> a.getFullName().compareToIgnoreCase(b.getFullName()))
                 .map(RepositoryResponse::from)
                 .toList();
