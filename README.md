@@ -39,7 +39,7 @@ Whether you are onboarding to a new project, looking for specific logic, or debu
 - **Framework**: [Spring Boot 3](https://spring.io/projects/spring-boot)
 - **Language**: Java 21
 - **AI Integration**: Spring AI (Google Gemini)
-- **Database**: PostgreSQL + `pgvector` (for embeddings)
+- **Database**: MySQL
 - **Security**: Spring Security (OAuth2)
 
 ---
@@ -52,14 +52,14 @@ Follow these steps to set up the project locally.
 
 - [Node.js](https://nodejs.org/) (v18 or higher)
 - [Java 21](https://jdk.java.net/21/)
-- [Docker](https://www.docker.com/) (for running PostgreSQL)
+- [Docker](https://www.docker.com/) (for running MySQL)
 - A GitHub OAuth App (for client ID and secret)
 - A Google AI Studio API Key
 
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/your-username/devpilot.git
+git clone https://github.com/madhurja6/devpilot.git
 cd devpilot
 ```
 
@@ -88,7 +88,7 @@ cd devpilot
            api-key: YOUR_GOOGLE_AI_API_KEY
            chat:
              options:
-               model: gemini-2.5-flash # or the latest available
+               model: gemini-3.8-flash # or the latest available
      security:
        oauth2:
          client:
