@@ -80,8 +80,11 @@ export function RepoDashboard() {
                     </div>
                 ) : filteredRepos.length > 0 ? (
                     <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-                        {filteredRepos.map((repo) => (
-                            <RepoCard key={repo.id} repo={repo} />
+                        {filteredRepos.map((repo, index) => (
+                            <RepoCard
+                                key={`${repo.id}-${repo.name}-${index}`}
+                                repo={repo}
+                            />
                         ))}
                     </div>
                 ) : (

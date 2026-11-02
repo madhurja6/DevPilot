@@ -119,8 +119,11 @@ export function OverviewDashboard() {
 
                 {repos && repos.length > 0 ? (
                     <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-                        {repos.slice(0, 3).map((repo) => (
-                            <RepoCard key={repo.id} repo={repo} />
+                        {repos.slice(0, 3).map((repo, index) => (
+                            <RepoCard
+                                key={`${repo.id}-${repo.name}-${index}`}
+                                repo={repo}
+                            />
                         ))}
                     </div>
                 ) : (
